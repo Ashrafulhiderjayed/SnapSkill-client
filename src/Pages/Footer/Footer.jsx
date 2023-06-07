@@ -56,7 +56,7 @@ const Footer = () => {
           </div>
         </footer>
         <hr />
-        <p className='text-center font-medium  p-5'>&copy; {currentYear} WHEELS, Inc. All rights reserved.</p>
+        <p className='text-center font-medium  p-5'>&copy; {currentYear} SUMMER-PHOTO-CAMP, Inc. All rights reserved.</p>
         </section>
     );
 };
