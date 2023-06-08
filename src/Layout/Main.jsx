@@ -6,7 +6,7 @@ const Main = () => {
     return (
         <div>
             <Navbar></Navbar>
-            {/* <Outlet  className='max-w-screen-xl mx-auto' /> */}
+            <Outlet />
             <Footer></Footer>
         </div>
     );
