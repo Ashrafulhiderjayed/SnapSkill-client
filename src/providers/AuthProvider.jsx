@@ -53,7 +53,7 @@ const AuthProvider = ({children}) => {
           }, [])
     
     //update user profile
-    const updateUserProfile = (user, name, ) =>{
+    const updateUserProfile = (user, name ) =>{
         return updateProfile(user)
     }
 
