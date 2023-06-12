@@ -1,4 +1,4 @@
-import { useContext} from 'react';
+import { useContext, useState} from 'react';
 import { AuthContext } from '../../providers/AuthProvider';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
@@ -11,7 +11,8 @@ const Login = () => {
 
     const from = location.state?.from?.pathname || "/";
 
-   
+    const [passwordShown, setPasswordShown] = useState(false);
+
 
     const handleLogin = event => {
         event.preventDefault();
@@ -35,6 +36,10 @@ const Login = () => {
                 navigate(from, { replace: true });
             })
     }
+
+    const showPassword = () => {
+        setPasswordShown(!passwordShown);
+      };
 
 
     return (
@@ -60,9 +65,12 @@ const Login = () => {
                                 <label className="label">
                                     <span className="label-text">Password</span>
                                 </label>
-                                <input type="password" name="password" placeholder="password" className="input input-bordered" />
+                                <div>
+                                    <input type={passwordShown ? 'text':'password'} name="password" placeholder="password" className="input input-bordered" /> 
+                                </div>
                                 <label className="label">
-                                    <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
+                                    <button onClick={showPassword} className="eye fas fa-eye"
+                    style={passwordShown ? { cursor: 'pointer' } : { cursor: 'default' }}><a href="#" className="label-text-alt link link-hover">Forgot password?</a></button>
                                 </label>
                             </div>
                             <div className="form-control mt-6">
