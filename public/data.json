@@ -1,0 +1,50 @@
+[
+    {
+      "_id": "01",
+      "class img": "https://example.com/class1.jpg",
+      "class name": "Cricket",
+      "available seats": 25,
+      "price": "$199",
+      "number_of_students": 18
+    },
+    {
+      "_id": "02",
+      "class img": "https://example.com/class2.jpg",
+      "class name": "Football",
+      "available seats": 15,
+      "price": "$149",
+      "number_of_students": 12
+    },
+    {
+      "_id": "03",
+      "class img": "https://example.com/class3.jpg",
+      "class name": "Tennis",
+      "available seats": 20,
+      "price": "$179",
+      "number_of_students": 16
+    },
+    {
+      "_id": "04",
+      "class img": "https://example.com/class4.jpg",
+      "class name": "Basketball",
+      "available seats": 30,
+      "price": "$129",
+      "number_of_students": 22
+    },
+    {
+      "_id": "05",
+      "class img": "https://example.com/class5.jpg",
+      "class name": "Swimming",
+      "available seats": 18,
+      "price": "$189",
+      "number_of_students": 14
+    },
+    {
+      "_id": "06",
+      "class img": "https://example.com/class6.jpg",
+      "class name": "Volleyball",
+      "available seats": 22,
+      "price": "$159",
+      "number_of_students": 20
+    }
+]
