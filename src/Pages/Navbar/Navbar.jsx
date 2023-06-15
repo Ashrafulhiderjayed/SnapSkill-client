@@ -3,12 +3,12 @@ import { AuthContext } from "../../providers/AuthProvider";
 import { useContext } from "react";
 import moon from '../../assets/icons/moon.png'
 import sun from '../../assets/icons/sun.png'
-import useCart from "../../hooks/useCart";
+// import useCart from "../../hooks/useCart";
 
 const NavBar = () => {
     
     const { user, logOut } = useContext(AuthContext);
-    const [cart] = useCart();
+    // const [cart] = useCart();
 
     const handleLogOut = () => {
         logOut()
@@ -22,7 +22,7 @@ const NavBar = () => {
     <li><Link to="/order/salad">Order Food</Link></li>
     <li><Link to="/private">Private</Link></li>
     <li><Link to='/dashboard/mycart'>
-        <div className="badge badge-secondary">+{cart?.length || 0}</div>
+        {/* <div className="badge badge-secondary">+{cart?.length || 0}</div> */}
         </Link></li>
     {
         user ? <>
