@@ -22,6 +22,19 @@ This project aims to create a comprehensive website for summer photo camp classe
 
 * Attractive Homepage: The homepage features a visually appealing design with sliders, popular classes, popular instructors, and an additional section with animations, creating an engaging user experience.
 
+## Technology Used
+* React
+* React-Router-Dom
+* React-helmet
+* React-hook-form
+* React-query
+* sweetalert2
+* Tailwind Css
+* Daisy UI
+* Firebase
+* Express.js
+* MongoDB
+* Vercel
 
 ### Live Website Link 
 [SUMMER PHOTO CAMP]()
