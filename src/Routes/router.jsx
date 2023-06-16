@@ -10,6 +10,8 @@ import Instructors from "../Pages/Instructors/Instructors";
 import Classes from "../Pages/Classes/Classes";
 import EnrolledClasses from "../Pages/EnrolledClasses/EnrolledClasses";
 import PaymentHistory from "../Pages/PaymentHistory/PaymentHistory";
+import Payment from "../Pages/Payment/Payment";
+import AdminRoute from "./AdminRoute";
 
 
 
@@ -66,6 +68,12 @@ export const router = createBrowserRouter([
           path: "payment/:id",
           element: <Payment></Payment>,
           loader: ({ params }) => <Payment id={params.id}></Payment>,
+        },
+        {
+          path: "manageUser",
+          element: (
+            <AdminRoute> <ManageUsers></ManageUsers> </AdminRoute>
+          ),
         },
       ]
     }
