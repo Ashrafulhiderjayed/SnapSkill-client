@@ -26,6 +26,7 @@ This project aims to create a comprehensive website for summer photo camp classe
 * React
 * React-Router-Dom
 * React-helmet
+* React-framer-motion
 * React-hook-form
 * React-query
 * sweetalert2
