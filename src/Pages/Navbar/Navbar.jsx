@@ -1,147 +1,129 @@
-import { Link } from "react-router-dom";
-import { AuthContext } from "../../providers/AuthProvider";
 import { useContext } from "react";
-import moon from '../../assets/icons/moon.png'
-import sun from '../../assets/icons/sun.png'
-// import useCart from "../../hooks/useCart";
+import { Link, NavLink } from "react-router-dom";
 
-const NavBar = () => {
-    
-    const { user, logOut } = useContext(AuthContext);
-    // const [cart] = useCart();
+import { FaShoppingCart } from "react-icons/fa";
+import { AuthContext } from "../../providers/AuthProvider";
+import useCart from "../../hooks/useCart";
+import useAdmin from "../../hooks/useAdmin";
+import useInstructor from "../../hooks/useInstructor";
 
-    const handleLogOut = () => {
-        logOut()
-            .then(() => { })
-            .catch(error => console.log(error));
-    }
+const Navbar = () => {
+  const { user, logOut } = useContext(AuthContext);
+  const [cart] = useCart();
+  const [isAdmin] = useAdmin();
+  const [isInstructor] = useInstructor();
 
-    const navOptions =  <>
-    <li><Link to="/">Home</Link></li>
-    <li><Link to="/menu">Our Menu</Link></li>
-    <li><Link to="/order/salad">Order Food</Link></li>
-    <li><Link to="/private">Private</Link></li>
-    <li><Link to='/dashboard/mycart'>
-        {/* <div className="badge badge-secondary">+{cart?.length || 0}</div> */}
-        </Link></li>
-    {
-        user ? <>
-            <span>{user?.displayName}</span>
-            <button onClick={handleLogOut} className="btn btn-ghost">LogOut</button>
-        </> : <>
-            <li><Link to="/login">Login</Link></li>
+  const handleLogout = () => {
+    logOut()
+      .then(() => {})
+      .catch((error) => console.log(error));
+  };
+
+  const navOptions = (
+    <>
+      <li>
+        <Link to='/'>Home</Link>
+      </li>
+      <li>
+        <Link to='/instructors'>Instructors</Link>
+      </li>
+      <li>
+        <Link to='/classes'>Classes</Link>
+      </li>
+      {user ? (
+        <>
+          <li>
+            <NavLink
+              to={
+                isAdmin
+                  ? "dashboard/manageUser"
+                  : isInstructor
+                  ? "dashboard/addClass"
+                  : "dashboard/mycart"
+              }
+            >
+              Dashboard
+            </NavLink>
+          </li>
         </>
-    }
-    <li>
-    <div className="flex-none">
-        {/* Toggle button here */}
-        <button className="btn btn-square btn-ghost">
-          <label className="swap swap-rotate w-12 h-12">
-            <input type="checkbox" />
-            {/* light theme sun image */}
-            <img src={sun} alt="light" className="w-8 h-8 swap-on" />
-            {/* dark theme moon image */}
-            <img src={moon} alt="dark" className="w-8 h-8 swap-off" />
-          </label>
-        </button>
-      </div>
-    </li>
-</>    
+      ) : (
+        <></>
+      )}
+      <li>
+        <Link to='/dashboard/mycart'>
+          <button className='btn btn-sm'>
+            <FaShoppingCart />
+            <div className='badge badge-secondary ml-1'>
+              +{cart?.length || 0}
+            </div>
+          </button>
+        </Link>
+      </li>
+      {user ? (
+        <>
+          <button onClick={handleLogout} className='btn btn-ghost'>
+            LogOut
+          </button>
+        </>
+      ) : (
+        <>
+          <li>
+            <Link to='/login'>Login</Link>
+          </li>
+        </>
+      )}
+    </>
+  );
 
-    return (
-        <div className="navbar fixed z-10 bg-opacity-30 max-w-screen-xl bg-black text-white">
-            <div className="navbar-start">
-                <div className="dropdown">
-                    <label tabIndex={0} className="btn btn-ghost lg:hidden">
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
-                    </label>
-                    <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
-                        {navOptions}
-                    </ul>
-                </div>
-                <a className="btn btn-ghost normal-case text-xl">Summer Photo Camp</a>
-            </div>
-            <div className="navbar-center hidden lg:flex">
-                <ul className="menu menu-horizontal px-1">
-                    {navOptions}
-                </ul>
-            </div>
-            <div className="navbar-end">
-                <a className="btn">Get started</a>
-            </div>
+  return (
+    <>
+      <div className='navbar fixed z-10 bg-opacity-30 bg-black lg:text-white max-w-screen-xl'>
+        <div className='navbar-start'>
+          <div className='dropdown'>
+            <label tabIndex={0} className='btn btn-ghost lg:hidden'>
+              <svg
+                xmlns='http://www.w3.org/2000/svg'
+                className='h-5 w-5'
+                fill='none'
+                viewBox='0 0 24 24'
+                stroke='currentColor'
+              >
+                <path
+                  strokeLinecap='round'
+                  strokeLinejoin='round'
+                  strokeWidth='2'
+                  d='M4 6h16M4 12h8m-8 6h16'
+                />
+              </svg>
+            </label>
+            <ul
+              tabIndex={0}
+              className='menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52'
+            >
+              {navOptions}
+            </ul>
+          </div>
+          <a className='btn btn-ghost normal-case text-xl'>SUMMER PHOTO CAMP</a>
         </div>
-    );
+        <div className='navbar-center hidden lg:flex'>
+          <ul className='menu menu-horizontal px-1'>{navOptions}</ul>
+        </div>
+        {user && (
+          <div className=''>
+            <div className='w-12 rounded-full'>
+              <img
+                className='rounded-full'
+                src={user?.photoURL}
+                data-toggle='tooltip'
+                data-placement='top'
+                title={user?.displayName}
+              />
+            </div>
+          </div>
+        )}
+      </div>
+    </>
+  );
 };
 
-export default NavBar;
-// import { Link } from "react-router-dom";
-// import { AuthContext } from "../../providers/AuthProvider";
-// import { useContext } from "react";
-// import moon from '../../assets/icons/moon.png'
-// import sun from '../../assets/icons/sun.png'
-
-// const NavBar = () => {
-    
-//     const { user, logOut } = useContext(AuthContext);
-
-//     const handleLogOut = () => {
-//         logOut()
-//             .then(() => { })
-//             .catch(error => console.log(error));
-//     }
-
-//     const navOptions =  <>
-//     <li><Link to="/">Home</Link></li>
-//     <li><Link to="/menu">Our Menu</Link></li>
-//     <li><Link to="/order/salad">Order Food</Link></li>
-//     <li><Link to="/private">Private</Link></li>
-//     {
-//         user ? <>
-//             <span>{user?.displayName}</span>
-//             <button onClick={handleLogOut} className="btn btn-ghost">LogOut</button>
-//         </> : <>
-//             <li><Link to="/login">Login</Link></li>
-//         </>
-//     }
-//     <li>
-//     <div className="flex-none">
-//         {/* Toggle button here */}
-//         <button className="btn btn-square btn-ghost">
-//           <label className="swap swap-rotate w-12 h-12">
-//             <input type="checkbox" />
-//             {/* light theme sun image */}
-//             <img src={sun} alt="light" className="w-8 h-8 swap-on" />
-//             {/* dark theme moon image */}
-//             <img src={moon} alt="dark" className="w-8 h-8 swap-off" />
-//           </label>
-//         </button>
-//       </div>
-//     </li>
-// </>    
-
-//     return (
-//         <div className="navbar fixed z-10 bg-opacity-30 max-w-screen-xl bg-black text-white">
-//             <div className="navbar-start">
-//                 <div className="dropdown">
-//                     <label tabIndex={0} className="btn btn-ghost lg:hidden">
-//                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
-//                     </label>
-//                     <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
-//                         {navOptions}
-//                     </ul>
-//                 </div>
-//                 <a className="btn btn-ghost normal-case text-xl">Summer Photo Camp</a>
-//             </div>
-//             <div className="navbar-center hidden lg:flex">
-//                 <ul className="menu menu-horizontal px-1">
-//                     {navOptions}
-//                 </ul>
-//             </div>
-//             <div className="navbar-end">
-//                 <a className="btn">Get started</a>
-//             </div>
-//         </div>
-//     );
-// };
-
-// export default NavBar;
+export default Navbar;
