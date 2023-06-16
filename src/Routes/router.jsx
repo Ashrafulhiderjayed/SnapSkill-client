@@ -13,6 +13,9 @@ import PaymentHistory from "../Pages/PaymentHistory/PaymentHistory";
 import Payment from "../Pages/Payment/Payment";
 import AdminRoute from "./AdminRoute";
 import ManageUsers from "../Pages/ManageUsers/ManageUsers";
+import ManageClasses from "../Pages/ManageClasses/ManageClasses";
+import InstructorRoute from "./InstructorRoute";
+import AddClass from "../Pages/AddClass/AddClass";
 
 
 
@@ -83,6 +86,16 @@ export const router = createBrowserRouter([
               <ManageClasses></ManageClasses>
             </AdminRoute>
           ),
+        },
+        {
+          path: "addClass",
+          element: (
+            <InstructorRoute><AddClass></AddClass></InstructorRoute>
+          ),
+        },
+        {
+          path: "myClass",
+          element: <InstructorClass />,
         },
       ]
     }

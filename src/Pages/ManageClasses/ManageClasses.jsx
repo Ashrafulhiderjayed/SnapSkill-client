@@ -1,8 +1,8 @@
 
 import { useQuery } from "@tanstack/react-query";
 import { useContext } from "react";
-import { AuthContext } from "../../providers/AuthProvider";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
+import { AuthContext } from "../../providers/AuthProvider";
 
 const ManageClasses = () => {
   // const { _id, image, class_name, instructor_name, available_seats, price } =
