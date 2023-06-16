@@ -1,5 +1,6 @@
+import useEnrollClass from "../../hooks/useEnrollClass";
 
-import useEnrollClass from '../../../hooks/useEnrollClass';
+
 
 const EnrolledClasses = () => {
     const [enrollClass, refetch] = useEnrollClass()

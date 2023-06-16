@@ -8,6 +8,8 @@ import MyCart from "../Pages/Dashboard/MyCart/MyCart";
 import Registration from "../Pages/Registration/Registration";
 import Instructors from "../Pages/Instructors/Instructors";
 import Classes from "../Pages/Classes/Classes";
+import EnrolledClasses from "../Pages/EnrolledClasses/EnrolledClasses";
+import PaymentHistory from "../Pages/PaymentHistory/PaymentHistory";
 
 
 
@@ -53,12 +55,17 @@ export const router = createBrowserRouter([
           element: <MyCart></MyCart>,
         },
         {
-          // path: "paymentHistory",
-          // element: <PaymentHistory></PaymentHistory>,
+          path: "paymentHistory",
+          element: <PaymentHistory></PaymentHistory>,
         },
         {
           path: "enrollClass",
           element: <EnrolledClasses></EnrolledClasses>,
+        },
+        {
+          path: "payment/:id",
+          element: <Payment></Payment>,
+          loader: ({ params }) => <Payment id={params.id}></Payment>,
         },
       ]
     }
