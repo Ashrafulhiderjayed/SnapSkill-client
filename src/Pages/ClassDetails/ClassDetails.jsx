@@ -1,10 +1,10 @@
 import { useContext } from "react";
-import { AuthContext } from "../../../providers/AuthProvider";
 import Swal from "sweetalert2";
 import { useLocation, useNavigate } from "react-router-dom";
 import useInstructor from "../../hooks/useInstructor";
 import useAdmin from "../../hooks/useAdmin";
 import useCart from "../../hooks/useCart";
+import { AuthContext } from "../../providers/AuthProvider";
 
 const ClassDetails = ({ item }) => {
   const { _id, image, class_name, instructor_name, available_seats, price } =
