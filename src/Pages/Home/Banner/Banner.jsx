@@ -41,7 +41,7 @@ const Banner = () => {
 //     </div>
 //   </div>
 // </div>
-<div className="carousel w-full">
+<div className="carousel w-full mb-8">
 <div id="slide1" className="carousel-item relative w-full">
   <img src={img1} className="w-full" />
   <div className="overlay mt-16">

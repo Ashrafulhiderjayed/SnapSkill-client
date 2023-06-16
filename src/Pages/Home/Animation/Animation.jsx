@@ -10,7 +10,7 @@ const Animation = () => {
 
   return (
     <div>
-      <h2 className='text-5xl text-center my-4 font-CreteRound text-primary2btn font-bold'>Camp Gallery</h2>
+      <h2 className='uppercase lg:text-5xl sm:text-3xl text-center font-CreteRound text-primary my-10 p-3'>Camp Gallery</h2>
       <div className="w-full p-5 pb-10 mb-10 gap-5 columns-3 space-y-5">
         {photos.map((photo) => (
           <motion.img
