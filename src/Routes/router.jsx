@@ -2,20 +2,22 @@ import { createBrowserRouter } from "react-router-dom";
 import Main from "../Layout/Main";
 import Home from "../Pages/Home/Home/Home";
 import Login from "../Pages/Login/Login";
+import Registration from "../Pages/Registration/Registration";
+import PopularInstructors from "../Pages/Home/PopularInstructors/PopularInstructors";
+import Classes from "../Pages/Classes/Classes";
 import PrivateRoute from "./PrivateRoute";
 import Dashboard from "../Layout/Dashboard";
+import PaymentHistory from "../Pages/Dashboard/PaymentHistory/PaymentHistory";
 import MyCart from "../Pages/Dashboard/MyCart/MyCart";
-import Registration from "../Pages/Registration/Registration";
-import Instructors from "../Pages/Instructors/Instructors";
-import Classes from "../Pages/Classes/Classes";
-import EnrolledClasses from "../Pages/EnrolledClasses/EnrolledClasses";
-import PaymentHistory from "../Pages/PaymentHistory/PaymentHistory";
-import Payment from "../Pages/Payment/Payment";
-import AdminRoute from "./AdminRoute";
-import ManageUsers from "../Pages/ManageUsers/ManageUsers";
-import ManageClasses from "../Pages/ManageClasses/ManageClasses";
+import EnrolledClasses from "../Pages/Dashboard/EnrolledClasses/EnrolledClasses";
+import Payment from "../Pages/Dashboard/Payment/Payment";
+import ManageClasses from "../Pages/Dashboard/ManageClasses/ManageClasses";
 import InstructorRoute from "./InstructorRoute";
-import AddClass from "../Pages/AddClass/AddClass";
+import AddClass from "../Pages/Dashboard/AddClass/AddClass";
+import InstructorClass from "../Pages/Dashboard/MyClass/InstructorClass";
+import ManageUsers from "../Pages/Dashboard/ManageUsers/ManageUsers";
+import AdminRoute from "./AdminRoute";
+import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 
 
 
@@ -23,6 +25,7 @@ export const router = createBrowserRouter([
     {
       path: "/",
       element: <Main></Main>,
+      errorElement: <ErrorPage />,
       children:[
         {
             path: '/',
@@ -38,7 +41,7 @@ export const router = createBrowserRouter([
         },
         {
           path: "/instructors",
-          element: <Instructors></Instructors>,
+          element: <PopularInstructors></PopularInstructors>,
         },
         {
           path: "/classes",
@@ -76,7 +79,9 @@ export const router = createBrowserRouter([
         {
           path: "manageUser",
           element: (
-            <AdminRoute> <ManageUsers></ManageUsers> </AdminRoute>
+            <AdminRoute>
+              <ManageUsers></ManageUsers>
+            </AdminRoute>
           ),
         },
         {
@@ -90,12 +95,22 @@ export const router = createBrowserRouter([
         {
           path: "addClass",
           element: (
-            <InstructorRoute><AddClass></AddClass></InstructorRoute>
+            <InstructorRoute>
+              <AddClass></AddClass>
+            </InstructorRoute>
+          ),
+        },
+        {
+          path: "addClass",
+          element: (
+            <InstructorRoute>
+              <AddClass></AddClass>
+            </InstructorRoute>
           ),
         },
         {
           path: "myClass",
-          element: <InstructorClass />,
+          element: <InstructorClass></InstructorClass>,
         },
       ]
     }

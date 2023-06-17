@@ -23,7 +23,8 @@ const Registration = () => {
             .then(() =>{
               console.log('user profile info updated')
               const saveUser = {name: data.name, email: data.email, photoURL: data.photoURL}
-              fetch("http://localhost:5000/users",{
+              // const saveUser = {name: data.name, email: data.email, photoURL: data.photoURL, role: 'student'}
+              fetch("https://summer-photo-camp-server.vercel.app/users",{
                 method: "POST",
                 headers: {
                   'content-type': 'application/json'
