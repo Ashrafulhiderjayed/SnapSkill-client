@@ -17,7 +17,8 @@ const queryClient = new QueryClient()
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
+  <div style={{overflowX: 'hidden'}}>
+    <React.StrictMode>
     <AuthProvider>
     <HelmetProvider>
       <QueryClientProvider client={queryClient}>
@@ -28,4 +29,6 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     </HelmetProvider>
     </AuthProvider>
   </React.StrictMode>,
+  </div>
+  
 )
