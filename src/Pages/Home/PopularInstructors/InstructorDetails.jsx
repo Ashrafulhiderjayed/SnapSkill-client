@@ -3,7 +3,7 @@
 const InstructorDetails = ({instructor}) => {
     const { photoURL, name } = instructor;
   return (
-    <div className='card w-96 glass bg-slate-100 shadow-xl'>
+    <div className='card w-80 glass bg-slate-100 shadow-xl'>
       <figure>
         <img className="h-32" src={photoURL} alt='Shoes' />
       </figure>
