@@ -81,7 +81,8 @@ const Login = () => {
           <div className="text-center lg:text-left">
             <h1 className="text-5xl font-CreteRound font-semibold text-primary hover:text-primary2btn">Login now!</h1>
           </div>
-          <div className="card max-w-sm shadow-2xl bg-base-100">
+          {/* <div className="card max-w-sm shadow-2xl bg-base-100"> */}
+          <div className="card shadow-2xl bg-base-100">
             <form onSubmit={handleSubmit(formSubmit)} className="card-body">
               <div className="form-control">
                 <label className="label">
@@ -97,15 +98,15 @@ const Login = () => {
                 <div>
                 <input type={showPassword ? "text" : "password"} placeholder="Password" {...register("password", { required: true })} name="password" className="input input-bordered" required/>
                 </div>
-                <FaEye className="password-toggle mt-2" onClick={togglePasswordVisibility}></FaEye>
                          {errors.email && <span className='text-red-600'>Password is required</span>}
               </div>
-              <div className="form-control mt-6">
+              <div className="form-control relative mt-6">
                 <input
                   className="btn btn-primary font-CreteRound bg-primary hover:bg-primary2btn text-white font-bold"
                   type="submit"
                   value="Login"
                 />
+                <FaEye onClick={togglePasswordVisibility} className="password-toggle absolute left-96 mt-3 transform -translate-y-24 text-gray-600" />
               </div>
             </form>
             <p className="my-4 text-center">New to SUMMER CAMP? <Link className="text-orange-600 font-bold" to="/registration">Sign Up</Link></p>
