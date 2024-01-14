@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
-
+import './Navbar.css'
 import { FaShoppingCart } from "react-icons/fa";
 import { AuthContext } from "../../../providers/AuthProvider";
 import useCart from "../../../hooks/useCart";
@@ -32,7 +32,7 @@ const Navbar = () => {
       </li>
       {user ? (
         <>
-          <li>
+          <li id="">
             <NavLink
               to={
                 isAdmin
@@ -77,7 +77,7 @@ const Navbar = () => {
 
   return (
     <>
-      <div className='navbar fixed z-10 bg-opacity-30 bg-black lg:text-white max-w-screen-xl'>
+      <div className='navbar z-10 bg-opacity-30  max-w-screen-xl'>
         <div className='navbar-start'>
           <div className='dropdown'>
             <label tabIndex={0} className='btn btn-ghost lg:hidden'>
@@ -103,9 +103,9 @@ const Navbar = () => {
               {navOptions}
             </ul>
           </div>
-          <a className='btn btn-ghost normal-case text-xl sm:text-base'>SUMMER PHOTO CAMP</a>
+          <a className='btn btn-ghost normal-case text-xl sm:text-base'>SnapSkill</a>
         </div>
-        <div className='navbar-center hidden lg:flex'>
+        <div className='navbar-center hidden' id="center-card-icon">
           <ul className='menu menu-horizontal px-1'>{navOptions}</ul>
         </div>
         {user && (

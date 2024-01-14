@@ -72,14 +72,14 @@ const Login = () => {
     }
     
   return (
-    <>
+    <section>
       <Helmet>
-        <title>Summer Photo Camp | Login</title>
+        <title>SnapSkill | Login</title>
       </Helmet>
-      <div className="hero min-h-screen bg-base-200">
-        <div className="hero-content flex-col lg:flex-col">
+      <div className="hero bg-base-200">
+        <div className="hero-content flex-col lg:flex-col w-96">
           <div className="text-center lg:text-left">
-            <h1 className="text-5xl font-CreteRound font-semibold text-primary hover:text-primary2btn">Login now!</h1>
+            <h1 className="text-5xl font-CreteRound font-semibold text-primary hover:text-primary2btn mt-16">Login now!</h1>
           </div>
           {/* <div className="card max-w-sm shadow-2xl bg-base-100"> */}
           <div className="card shadow-2xl bg-base-100">
@@ -117,7 +117,7 @@ const Login = () => {
           
         </div>
       </div>
-    </>
+    </section>
   );
 };
 

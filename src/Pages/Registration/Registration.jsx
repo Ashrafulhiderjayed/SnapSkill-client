@@ -66,7 +66,7 @@ const Registration = () => {
           <div className="text-center lg:text-left">
             <h1 className="text-5xl font-CreteRound font-semibold text-primary hover:text-primary2btn">Sign Up</h1>
           </div>
-          <div className="card max-w-sm shadow-2xl bg-base-100">
+          <div className="card shadow-2xl bg-base-100">
             <form onSubmit={handleSubmit(onSubmit)} className="card-body">
               <div className="form-control">
                 <label className="label">

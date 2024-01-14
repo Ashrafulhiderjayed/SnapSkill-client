@@ -7,7 +7,7 @@ const Footer = () => {
         <footer className="font-CreteRound footer mt-12 p-10">
           <div>
             <FaCamera className='text-7xl'></FaCamera>
-            <p>Summer Photo Camp<br/>Grow your photography career with us</p>
+            <p>SnapSkill<br/>Grow your photography career with us</p>
             <section className='flex gap-4'>
               <a href="https://www.facebook.com/ashraful.hider/">
                 <FaFacebook></FaFacebook>

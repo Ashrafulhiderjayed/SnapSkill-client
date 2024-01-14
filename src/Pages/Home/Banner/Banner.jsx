@@ -14,7 +14,7 @@ const Banner = () => {
 //       <a href="#slide2" className="btn btn-circle">❯</a>
 //     </div>
 //     <div className="slider-content">
-//           <h2>Summer Photography Camp</h2>
+//           <h2>SnapSkill Camp</h2>
 //           <p>Unleash your creativity and capture the beauty of summer!</p>
 //           <a href="/camp-details" className="btn btn-primary">Learn More</a>
 //         </div>
