@@ -1,4 +1,4 @@
-## Project  Name - SUMMER PHOTO CAMP
+## Project  Name - SnapSkill
 
 
 ## Project Overview
