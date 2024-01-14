@@ -38,4 +38,4 @@ This project aims to create a comprehensive website for summer photo camp classe
 * Vercel
 
 ### Live Website Link 
-[SUMMER PHOTO CAMP](https://summer-photo-camp.web.app/)
+[SnapSkill](https://summer-photo-camp.web.app/)
