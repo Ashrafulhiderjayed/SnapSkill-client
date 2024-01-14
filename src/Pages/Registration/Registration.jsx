@@ -59,7 +59,7 @@ const Registration = () => {
     return (
         <>
             <Helmet>
-                <title>Summer Photo Camp | Registration</title>
+                <title>SnapSkill | Registration</title>
             </Helmet>
             <div className="hero min-h-screen bg-base-200">
         <div className="hero-content flex-col lg:flex-col">

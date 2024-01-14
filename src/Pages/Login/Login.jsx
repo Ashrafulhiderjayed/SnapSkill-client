@@ -109,7 +109,7 @@ const Login = () => {
                 <FaEye onClick={togglePasswordVisibility} className="password-toggle absolute left-96 mt-3 transform -translate-y-24 text-gray-600" />
               </div>
             </form>
-            <p className="my-4 text-center">New to SUMMER CAMP? <Link className="text-orange-600 font-bold" to="/registration">Sign Up</Link></p>
+            <p className="my-4 text-center">New to SnapSkill? <Link className="text-orange-600 font-bold" to="/registration">Sign Up</Link></p>
                   <div className="text-center mb-2">
                   <Link><button onClick={handleGoogleLogin} className="btn btn-outline border-primary hover:text-primary2btn"><FaGoogle className=' text-red-500'/> Google Login</button></Link>
                 </div>
